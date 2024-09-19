@@ -19,6 +19,9 @@ const nextConfig = withNextIntl({
       },
     ],
   },
+  env: {
+    _next_intl_trailing_slash: '', // 或者 '/'，取决于你想要的行为
+  },
 })
 
-module.exports = nextConfig
+module.exports = nextConfig;

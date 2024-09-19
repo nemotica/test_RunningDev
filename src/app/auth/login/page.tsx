@@ -1,16 +1,28 @@
 "use client";
+import { authOptions } from "@/app/api/auth/[...nextauth]/option";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Icons } from "@/components/ui/tony/icons";
 import { cn } from "@/lib/utils";
 import { useColorStore } from "@/store/color-store";
+import { signIn } from "next-auth/react"; // 添加这一行 
 import React from "react";
 
 type Props = {};
 
 export default function LoginPage({}: Props) {
   const themeColor = useColorStore((state) => state.themeColor);
+
+  //   // 添加 Google 登录处理函数
+  // const handleGoogleSignIn = async () => {
+  //   try {
+  //     await signIn("google", { callbackUrl: "/" }); // 触发 Google 登录
+  //   } catch (error) {
+  //     console.error("Google sign-in failed:", error);
+  //   }
+  // };
+  
   return (
     <div className="mx-auto   mt-10 h-full max-w-xl">
       <h2 className=" bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-center text-2xl   font-bold text-transparent">
@@ -23,6 +35,7 @@ export default function LoginPage({}: Props) {
           Github
         </Button>
 
+        {/* <Button variant="outline" type="button" onClick={handleGoogleSignIn}> */}
         <Button variant="outline" type="button">
           <Icons.google className="mr-2 h-4 w-4" />
           Google
