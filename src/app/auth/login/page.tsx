@@ -1,5 +1,4 @@
 "use client";
-import { authOptions } from "@/app/api/auth/[...nextauth]/option";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -35,7 +34,7 @@ export default function LoginPage({}: Props) {
           Github
         </Button>
 
-        {/* <Button variant="outline" type="button" onClick={handleGoogleSignIn}> */}
+        {/* <Button variant="outline" type="button" onClick={handleGoogleSignIn}> 增加一些注释*/}
         <Button variant="outline" type="button">
           <Icons.google className="mr-2 h-4 w-4" />
           Google
